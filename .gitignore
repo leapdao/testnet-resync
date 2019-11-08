@@ -1,0 +1,6 @@
+node_modules
+leap-node
+node.log
+node.pid
+leap-testnet.json
+.env
