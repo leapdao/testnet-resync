@@ -13,8 +13,9 @@ if (!fs.existsSync('./node.pid') || !fs.existsSync('./node.log')) {
 
 const stopNode = () => {
   try {
-    process.kill(Number(fs.readFileSync('node.pid')))
+    const maybePid = fs.readFileSync('node.pid');
     fs.unlinkSync('node.pid');
+    process.kill(Number(maybePid));
   } catch (e) {
     console.warn(e);
   }
